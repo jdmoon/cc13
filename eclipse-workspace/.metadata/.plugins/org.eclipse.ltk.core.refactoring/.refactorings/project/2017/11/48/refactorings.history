@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;project.pro2.java&apos; to &apos;JPanelEx.java&apos;&#x0D;&#x0A;- Original project: &apos;project&apos;&#x0D;&#x0A;- Original element: &apos;project.pro2.java&apos;&#x0D;&#x0A;- Renamed element: &apos;project.JPanelEx.java&apos;" description="Rename compilation unit &apos;pro2.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;project{pro2.java" name="JPanelEx.java" references="false" stamp="1511804467568" version="1.0"/>
+</session>

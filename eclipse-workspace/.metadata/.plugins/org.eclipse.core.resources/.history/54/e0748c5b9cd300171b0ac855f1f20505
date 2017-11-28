@@ -1,0 +1,66 @@
+package project;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import java.util.Timer;
+import javax.swing.*;
+	public class Bubble extends JFrame
+	{
+		int bubbleRadius = 5;
+		ArrayList<Point> bubblePosition = new ArrayList<Point>();
+		public Bubble()
+		{
+			setVisible(true);
+			setSize(500,500);
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			Timer timer = new Timer();
+			timer.schedule(new TimerTask()//?
+					{
+				@Override
+				public void run()
+				{
+					for(int i=0;i < bubblePosition.size();i++)
+					{
+						bubblePosition.get(i).y -= 5;
+						if(bubblePosition.get(i).y < 0)
+						{
+							bubblePosition.remove(i);
+				}
+			}
+			repaint();
+			}
+			}, 0, 20);
+	addMouseListener(new MouseAdapter()
+		{
+				@Override
+				public void mousePressed(MouseEvent e)
+				{
+					bubblePosition.add(e.getPoint());
+			}
+		});
+		}
+	@Override
+	public void paint(Graphics g)
+		{
+			Image img = createImage(getWidth(), getHeight());
+			Graphics bg = img.getGraphics();
+			for(int i=0;i < bubblePosition.size();i++)
+			{  
+				int x = bubblePosition.get(i).x;
+				int y = bubblePosition.get(i).y;
+				bg.drawOval(x-bubbleRadius, y-bubbleRadius, bubbleRadius+bubbleRadius, bubbleRadius+bubbleRadius);
+			}
+
+			g.drawImage(img, 0, 0, this);
+		}
+		@Override
+		public void update(Graphics g)
+		{
+			paint(g);
+		}
+		static public void main(String str[])
+		{
+			new Bubble();
+		}
+}

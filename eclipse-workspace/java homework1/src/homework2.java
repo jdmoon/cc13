@@ -1,0 +1,32 @@
+public class homework2 {
+class TV {
+	private float size;
+	public TV(float size) {this.size = size;}
+	protected float getSize() {return size;}
+	protected float getAdress() {return size;}
+	
+}
+public class ColorTV extends TV{ // extends를 사용
+	private float nColors;//색깔
+	private float nAdress;//주소
+	public ColorTV(float size,float nColors,float nAdress) {
+		super(size);
+		this.nColors = nColors;
+		this.setnAdress(nAdress);		
+	}
+	public void printProperty() {
+		System.out.println("ColorTV " + getAdress() + "address " + getSize() + "inch " + nColors + "color");
+	}
+	public void main(String [] args) {
+		ColorTV myTV = new ColorTV(192, 32, 2048);
+		myTV.printProperty();
+	}
+	public float getnAdress() {
+		return nAdress;
+	}
+	public void setnAdress(float nAdress) {
+		this.nAdress = nAdress;
+	}
+}
+}
+
